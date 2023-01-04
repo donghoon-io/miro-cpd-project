@@ -216,6 +216,7 @@ export function precondition(x, y) {
     height: 100,
   });
 }
+
 export function barrier(x, y) {
   const description = miro.board.createText({
     content: '<p>The problem that a strategy is intended to resolve</p>',
@@ -249,6 +250,112 @@ export function barrier(x, y) {
 
   const shape = miro.board.createShape({
     shape: 'pentagon',
+    style: {
+      color: '#000', // Default text color: '#1a1a1a' (black)
+      fillColor: 'transparent', // Default shape fill color: transparent (no fill)
+      fontFamily: 'arial', // Default font type for the text
+      fontSize: 14, // Default font size for the text, in dp
+      textAlign: 'center', // Default horizontal alignment for the text
+      textAlignVertical: 'middle', // Default vertical alignment for the text
+      borderStyle: 'normal', // Default border line style
+      borderOpacity: 1.0, // Default border color opacity: no opacity
+      borderColor: '#000', // Default border color: '#ffffff` (white)
+      borderWidth: 1, // Default border width
+      fillOpacity: 1.0, // Default fill color opacity: no opacity
+    },
+    x: x, // Default value: center of the board
+    y: y, // Default value: center of the board
+    width: 200,
+    height: 100,
+  });
+}
+
+export function proximal_outcome(x, y) {
+  const description = miro.board.createText({
+    content: '<p>The earliest signs of change in the mechanism, barrier, or precursors to the distal outcome</p>',
+    style: {
+      color: '#000', // Default value: #1a1a1a (black)
+      fillColor: 'transparent', // Default value: transparent (no fill)
+      fillOpacity: 1, // Default value: 1 (solid color)
+      fontFamily: 'arial', // Default font type for the text
+      fontSize: 12, // Default font size
+      textAlign: 'center', // Default alignment: left
+    },
+    x: x,
+    y: y-100,
+    width: 200,
+  });
+
+  const text = miro.board.createText({
+    content: '<b>Proximal outcome</b>',
+    style: {
+      color: '#000', // Default value: #1a1a1a (black)
+      fillColor: 'transparent', // Default value: transparent (no fill)
+      fillOpacity: 1, // Default value: 1 (solid color)
+      fontFamily: 'arial', // Default font type for the text
+      fontSize: 14, // Default font size
+      textAlign: 'center', // Default alignment: left
+    },
+    x: x,
+    y: y-60,
+    width: 200,
+  });
+
+  const shape = miro.board.createShape({
+    shape: 'circle',
+    style: {
+      color: '#000', // Default text color: '#1a1a1a' (black)
+      fillColor: 'transparent', // Default shape fill color: transparent (no fill)
+      fontFamily: 'arial', // Default font type for the text
+      fontSize: 14, // Default font size for the text, in dp
+      textAlign: 'center', // Default horizontal alignment for the text
+      textAlignVertical: 'middle', // Default vertical alignment for the text
+      borderStyle: 'normal', // Default border line style
+      borderOpacity: 1.0, // Default border color opacity: no opacity
+      borderColor: '#000', // Default border color: '#ffffff` (white)
+      borderWidth: 1, // Default border width
+      fillOpacity: 1.0, // Default fill color opacity: no opacity
+    },
+    x: x, // Default value: center of the board
+    y: y, // Default value: center of the board
+    width: 200,
+    height: 100,
+  });
+}
+
+export function distal_outcome(x, y) {
+  const description = miro.board.createText({
+    content: '<p>The desired implementation outcome</p>',
+    style: {
+      color: '#000', // Default value: #1a1a1a (black)
+      fillColor: 'transparent', // Default value: transparent (no fill)
+      fillOpacity: 1, // Default value: 1 (solid color)
+      fontFamily: 'arial', // Default font type for the text
+      fontSize: 12, // Default font size
+      textAlign: 'center', // Default alignment: left
+    },
+    x: x,
+    y: y-100,
+    width: 200,
+  });
+
+  const text = miro.board.createText({
+    content: '<b>Distal implementation outcome</b>',
+    style: {
+      color: '#000', // Default value: #1a1a1a (black)
+      fillColor: 'transparent', // Default value: transparent (no fill)
+      fillOpacity: 1, // Default value: 1 (solid color)
+      fontFamily: 'arial', // Default font type for the text
+      fontSize: 14, // Default font size
+      textAlign: 'center', // Default alignment: left
+    },
+    x: x,
+    y: y-60,
+    width: 200,
+  });
+
+  const shape = miro.board.createShape({
+    shape: 'circle',
     style: {
       color: '#000', // Default text color: '#1a1a1a' (black)
       fillColor: 'transparent', // Default shape fill color: transparent (no fill)

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 
-import { moderator, strategy, mechanism, precondition, barrier } from "./shapes/shapes";
+import { moderator, strategy, mechanism, precondition, barrier, proximal_outcome, distal_outcome } from "./shapes/shapes";
 
 import type { DropEvent } from "@mirohq/websdk-types";
 
@@ -20,7 +20,7 @@ function App() {
     const { x, y, target } = e;
     
 
-    barrier(x, y);
+    distal_outcome(x, y);
   };
 
   // Register the drop event handler once.
