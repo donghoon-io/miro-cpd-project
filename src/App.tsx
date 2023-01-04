@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 
+import { moderator, strategy, mechanism, precondition, barrier } from "./shapes/shapes";
+
 import type { DropEvent } from "@mirohq/websdk-types";
 
 const { board } = miro;
@@ -16,42 +18,9 @@ function App() {
 
   const drop = async (e: DropEvent) => {
     const { x, y, target } = e;
+    
 
-    const text = await miro.board.createText({
-      content: '<p>Moderator</p>',
-      style: {
-        color: '#000', // Default value: #1a1a1a (black)
-        fillColor: 'transparent', // Default value: transparent (no fill)
-        fillOpacity: 1, // Default value: 1 (solid color)
-        fontFamily: 'arial', // Default font type for the text
-        fontSize: 14, // Default font size
-        textAlign: 'center', // Default alignment: left
-      },
-      x: x,
-      y: y-60,
-      width: 200,
-    });
-
-    const shape = await miro.board.createShape({
-      shape: 'rectangle',
-      style: {
-        color: '#000', // Default text color: '#1a1a1a' (black)
-        fillColor: 'transparent', // Default shape fill color: transparent (no fill)
-        fontFamily: 'arial', // Default font type for the text
-        fontSize: 14, // Default font size for the text, in dp
-        textAlign: 'center', // Default horizontal alignment for the text
-        textAlignVertical: 'middle', // Default vertical alignment for the text
-        borderStyle: 'normal', // Default border line style
-        borderOpacity: 1.0, // Default border color opacity: no opacity
-        borderColor: '#000', // Default border color: '#ffffff` (white)
-        borderWidth: 1, // Default border width
-        fillOpacity: 1.0, // Default fill color opacity: no opacity
-      },
-      x: x, // Default value: center of the board
-      y: y, // Default value: center of the board
-      width: 200,
-      height: 100,
-    });
+    barrier(x, y);
   };
 
   // Register the drop event handler once.
