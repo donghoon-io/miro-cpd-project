@@ -1,12 +1,4 @@
-## Miro drag and drop app
-
-**&nbsp;ℹ&nbsp;Note**:
-
-- We recommend a Chromium-based web browser for local development with HTTP. \
-  Safari enforces HTTPS; therefore, it doesn't allow localhost through HTTP.
-- All examples use `npm` as a package manager and `npx` as a package runner. \
-  If you prefer, you can install and use equivalent alternatives, such as `yarn` or `pnpm`.
-- For more information about implementing [drag and drop](https://developers.miro.com/docs/add-drag-and-drop-to-your-app), visit our [developer documentation](https://developers.miro.com).
+## Miro addon for CPT project
 
 ### How to start locally
 
@@ -36,11 +28,3 @@
 ├── app.html <-- The app itself. This is loaded on the board inside the 'appContainer'
 └── index.html <-- The app entry point. This is what you specify in the 'App URL' box in the Miro app settings
 ```
-
-### About the app
-
-This sample app shows how you can drag and drop images onto a Miro board. \
-Built in React off of the [`create-miro-app`](https://www.npmjs.com/package/create-miro-app) React/Typescript starter.
-
-This app uses [Vite](https://vitejs.dev/). \
-If you want to modify the `vite.config.js` configuration, see the [Vite documentation](https://vitejs.dev/guide/).
