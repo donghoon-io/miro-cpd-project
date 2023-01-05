@@ -82,6 +82,12 @@ function App() {
           </g>
         </svg>
       </div>
+      <div className="miro-draggable draggable-item" style={containerStyle}>
+        <p style={pStyle}>Mechanism</p>
+        <svg width="60" height="60" transform="rotate(-45 10, 5)">
+          <rect x="5" y="5" width="50" height="50" style={rectStyle} />
+        </svg>
+      </div>
     </div>
   );
 }
