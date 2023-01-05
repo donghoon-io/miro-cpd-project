@@ -31,6 +31,7 @@ function App() {
   const containerStyle ={
     display: 'block',
     textAlign: 'center',
+    height: "80px"
   };
   const pStyle = {
     color:  'black',
@@ -49,19 +50,19 @@ function App() {
     <div className="main">
       <div className="miro-draggable draggable-item" style={containerStyle}>
         <p style={pStyle}>Moderator</p>
-        <svg width="100" height="100">
+        <svg width="100" height="70">
           <rect x="5" y="5" width="90" height="50" style={rectStyle} />
         </svg>
       </div>
       <div className="miro-draggable draggable-item" style={containerStyle}>
         <p style={pStyle}>Implementation strategy</p>
-        <svg width="100" height="100">
+        <svg width="100" height="70">
           <rect x="5" y="5" width="90" height="50" rx="10" ry="10" style={rectStyle} />
         </svg>
       </div>
       <div className="miro-draggable draggable-item" style={containerStyle}>
         <p style={pStyle}>Precondition</p>
-        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="100" height="50" viewBox="0 0 300.000000 131.000000" preserveAspectRatio="xMidYMid ">
+        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="100" height="70" viewBox="0 0 300.000000 131.000000" preserveAspectRatio="xMidYMid ">
           <g transform="translate(0.000000,131.000000) scale(0.100000,-0.100000)" fill="#1D1D1D" stroke="none">
             <path d="M699 1218 c-51 -89 -460 -793 -539 -928 -133 -226 -159 -275 -150
             -284 8 -8 2990 2 2990 11 0 2 -142 250 -316 551 -174 301 -342 591 -372 645
@@ -84,8 +85,28 @@ function App() {
       </div>
       <div className="miro-draggable draggable-item" style={containerStyle}>
         <p style={pStyle}>Mechanism</p>
-        <svg width="60" height="60" transform="rotate(-45 10, 5)">
-          <rect x="5" y="5" width="50" height="50" style={rectStyle} />
+        <svg width="60" height="70" transform="rotate(-45 10, 5)">
+          <rect x="10" y="5" width="50" height="50" style={rectStyle} />
+        </svg>
+      </div>
+      <div className="miro-draggable draggable-item" style={containerStyle}>
+        <p style={pStyle}>Barrier</p>
+        <svg viewBox="-18 10 160 160">
+          <polygon points="60 13,110 48,92 110,30 110,13 48" 
+            stroke="black" 
+            fill="transparent" stroke-width="1.5" />
+        </svg>
+      </div>
+      <div className="miro-draggable draggable-item" style={containerStyle}>
+        <p style={pStyle}>Proximal outcome</p>
+        <svg width="100" height="70">
+        <circle cx="50" cy="35" r="33" style={rectStyle} />
+        </svg>
+      </div>
+      <div className="miro-draggable draggable-item" style={containerStyle}>
+        <p style={pStyle}>Distal implementation outcome</p>
+        <svg width="100" height="70">
+        <circle cx="50" cy="35" r="33" style={rectStyle} />
         </svg>
       </div>
     </div>
