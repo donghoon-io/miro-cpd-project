@@ -297,7 +297,7 @@ export function proximal_outcome(x, y) {
       textAlign: 'center', // Default alignment: left
     },
     x: x,
-    y: y-70,
+    y: y-65,
     width: 200,
   });
 
