@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 
-import { moderator, strategy, mechanism, precondition, barrier, proximal_outcome, distal_outcome } from "./shapes/shapes";
+import { moderator, strategy, precondition, mechanism, barrier, proximal_outcome, distal_outcome } from "./shapes/shapes";
 
 import type { DropEvent } from "@mirohq/websdk-types";
 
@@ -19,8 +19,30 @@ function App() {
   const drop = async (e: DropEvent) => {
     const { x, y, target } = e;
     
+    switch(target.id) {
+      case "1":
+        moderator(x, y);
+        break;
+      case "2":
+        strategy(x, y);
+        break;
+      case "3":
+        precondition(x, y);
+        break;
+      case "4":
+        mechanism(x, y);
+        break;
+      case "5":
+        barrier(x, y);
+        break;
+      case "6":
+        proximal_outcome(x, y);
+        break;
+      default:
+        distal_outcome(x, y);
+        break;
+    }
 
-    distal_outcome(x, y);
   };
 
   // Register the drop event handler once.
@@ -48,19 +70,19 @@ function App() {
 
   return (
     <div className="main">
-      <div className="miro-draggable draggable-item" style={containerStyle}>
+      <div className="miro-draggable draggable-item" style={containerStyle} id="1">
         <p style={pStyle}>Moderator</p>
         <svg width="100" height="70">
           <rect x="5" y="5" width="90" height="50" style={rectStyle} />
         </svg>
       </div>
-      <div className="miro-draggable draggable-item" style={containerStyle}>
+      <div className="miro-draggable draggable-item" style={containerStyle} id="2">
         <p style={pStyle}>Implementation strategy</p>
         <svg width="100" height="70">
           <rect x="5" y="5" width="90" height="50" rx="10" ry="10" style={rectStyle} />
         </svg>
       </div>
-      <div className="miro-draggable draggable-item" style={containerStyle}>
+      <div className="miro-draggable draggable-item" style={containerStyle} id="3">
         <p style={pStyle}>Precondition</p>
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="100" height="70" viewBox="0 0 300.000000 131.000000" preserveAspectRatio="xMidYMid ">
           <g transform="translate(0.000000,131.000000) scale(0.100000,-0.100000)" fill="#1D1D1D" stroke="none">
@@ -83,13 +105,13 @@ function App() {
           </g>
         </svg>
       </div>
-      <div className="miro-draggable draggable-item" style={containerStyle}>
+      <div className="miro-draggable draggable-item" style={containerStyle} id="4">
         <p style={pStyle}>Mechanism</p>
         <svg width="60" height="70" transform="rotate(-45 10, 5)">
           <rect x="10" y="5" width="50" height="50" style={rectStyle} />
         </svg>
       </div>
-      <div className="miro-draggable draggable-item" style={containerStyle}>
+      <div className="miro-draggable draggable-item" style={containerStyle} id="5">
         <p style={pStyle}>Barrier</p>
         <svg viewBox="-18 10 160 160">
           <polygon points="60 13,110 48,92 110,30 110,13 48" 
@@ -97,13 +119,13 @@ function App() {
             fill="transparent" stroke-width="1.5" />
         </svg>
       </div>
-      <div className="miro-draggable draggable-item" style={containerStyle}>
+      <div className="miro-draggable draggable-item" style={containerStyle} id="6">
         <p style={pStyle}>Proximal outcome</p>
         <svg width="100" height="70">
         <circle cx="50" cy="35" r="33" style={rectStyle} />
         </svg>
       </div>
-      <div className="miro-draggable draggable-item" style={containerStyle}>
+      <div className="miro-draggable draggable-item" style={containerStyle} id="7">
         <p style={pStyle}>Distal implementation outcome</p>
         <svg width="100" height="70">
         <circle cx="50" cy="35" r="33" style={rectStyle} />

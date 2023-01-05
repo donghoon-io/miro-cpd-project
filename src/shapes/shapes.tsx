@@ -17,7 +17,7 @@ export function moderator(x, y) {
       textAlign: 'center', // Default alignment: left
     },
     x: x,
-    y: y-100,
+    y: y-85,
     width: 200,
   });
 
@@ -32,7 +32,7 @@ export function moderator(x, y) {
       textAlign: 'center', // Default alignment: left
     },
     x: x,
-    y: y-60,
+    y: y-55,
     width: 200,
   });
 
@@ -53,8 +53,8 @@ export function moderator(x, y) {
     },
     x: x, // Default value: center of the board
     y: y, // Default value: center of the board
-    width: 200,
-    height: 100,
+    width: 150,
+    height: 75,
   });
 }
 
@@ -70,7 +70,7 @@ export function strategy(x, y) {
       textAlign: 'center', // Default alignment: left
     },
     x: x,
-    y: y-100,
+    y: y-85,
     width: 200,
   });
 
@@ -85,7 +85,7 @@ export function strategy(x, y) {
       textAlign: 'center', // Default alignment: left
     },
     x: x,
-    y: y-60,
+    y: y-55,
     width: 200,
   });
 
@@ -106,8 +106,8 @@ export function strategy(x, y) {
     },
     x: x, // Default value: center of the board
     y: y, // Default value: center of the board
-    width: 200,
-    height: 100,
+    width: 150,
+    height: 75,
   });
 }
 
@@ -123,7 +123,7 @@ export function mechanism(x, y) {
       textAlign: 'center', // Default alignment: left
     },
     x: x,
-    y: y-100,
+    y: y-90,
     width: 200,
   });
 
@@ -159,7 +159,7 @@ export function mechanism(x, y) {
     },
     x: x, // Default value: center of the board
     y: y, // Default value: center of the board
-    width: 200,
+    width: 100,
     height: 100,
   });
 }
@@ -191,7 +191,7 @@ export function precondition(x, y) {
       textAlign: 'center', // Default alignment: left
     },
     x: x,
-    y: y-60,
+    y: y-55,
     width: 200,
   });
 
@@ -212,8 +212,8 @@ export function precondition(x, y) {
     },
     x: x, // Default value: center of the board
     y: y, // Default value: center of the board
-    width: 200,
-    height: 100,
+    width: 150,
+    height: 75,
   });
 }
 
@@ -229,7 +229,7 @@ export function barrier(x, y) {
       textAlign: 'center', // Default alignment: left
     },
     x: x,
-    y: y-100,
+    y: y-90,
     width: 200,
   });
 
@@ -265,7 +265,7 @@ export function barrier(x, y) {
     },
     x: x, // Default value: center of the board
     y: y, // Default value: center of the board
-    width: 200,
+    width: 100,
     height: 100,
   });
 }
@@ -297,7 +297,7 @@ export function proximal_outcome(x, y) {
       textAlign: 'center', // Default alignment: left
     },
     x: x,
-    y: y-60,
+    y: y-70,
     width: 200,
   });
 
@@ -318,7 +318,7 @@ export function proximal_outcome(x, y) {
     },
     x: x, // Default value: center of the board
     y: y, // Default value: center of the board
-    width: 200,
+    width: 100,
     height: 100,
   });
 }
@@ -350,7 +350,7 @@ export function distal_outcome(x, y) {
       textAlign: 'center', // Default alignment: left
     },
     x: x,
-    y: y-60,
+    y: y-70,
     width: 200,
   });
 
@@ -371,7 +371,7 @@ export function distal_outcome(x, y) {
     },
     x: x, // Default value: center of the board
     y: y, // Default value: center of the board
-    width: 200,
+    width: 100,
     height: 100,
   });
 }
