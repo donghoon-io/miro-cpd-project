@@ -498,9 +498,6 @@ async function flow(x, y, str, out) {
       },
     },
   });
-
-  await miro.board.viewport.zoomTo([description_start, text_start, shape_start, description_end, text_end, shape_end, connector]);
-  console.log(connector);
 }
 
 async function drop() {
