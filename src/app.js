@@ -521,7 +521,7 @@ async function drop() {
       case "6":
         proximal_outcome(x, y);
         break;
-      case "7":
+      case "8":
         const strategy_val = document.getElementById("strategy").value;
         const outcome_val = document.getElementById("outcome").value; 
         flow(x+150, y, strategy_val, outcome_val);
