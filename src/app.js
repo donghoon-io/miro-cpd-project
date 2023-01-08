@@ -369,6 +369,140 @@ function distal_outcome(x, y) {
   });
 }
 
+async function flow(x, y, str, out) {
+  const description_start = await miro.board.createText({
+    content: '<p>A specific and operationally defined implementation strategy</p>',
+    style: {
+      color: '#000', // Default value: #1a1a1a (black)
+      fillColor: 'transparent', // Default value: transparent (no fill)
+      fillOpacity: 1, // Default value: 1 (solid color)
+      fontFamily: 'arial', // Default font type for the text
+      fontSize: 12, // Default font size
+      textAlign: 'center', // Default alignment: left
+    },
+    x: x-300,
+    y: y-85,
+    width: 200,
+  });
+
+  const text_start = await miro.board.createText({
+    content: '<b>Implementation strategy</b>',
+    style: {
+      color: '#000', // Default value: #1a1a1a (black)
+      fillColor: 'transparent', // Default value: transparent (no fill)
+      fillOpacity: 1, // Default value: 1 (solid color)
+      fontFamily: 'arial', // Default font type for the text
+      fontSize: 14, // Default font size
+      textAlign: 'center', // Default alignment: left
+    },
+    x: x-300,
+    y: y-55,
+    width: 200,
+  });
+
+  const shape_start = await miro.board.createShape({
+    content: str,
+    shape: 'round_rectangle',
+    style: {
+      color: '#000', // Default text color: '#1a1a1a' (black)
+      fillColor: 'transparent', // Default shape fill color: transparent (no fill)
+      fontFamily: 'arial', // Default font type for the text
+      fontSize: 14, // Default font size for the text, in dp
+      textAlign: 'center', // Default horizontal alignment for the text
+      textAlignVertical: 'middle', // Default vertical alignment for the text
+      borderStyle: 'normal', // Default border line style
+      borderOpacity: 1.0, // Default border color opacity: no opacity
+      borderColor: '#000', // Default border color: '#ffffff` (white)
+      borderWidth: 1, // Default border width
+      fillOpacity: 1.0, // Default fill color opacity: no opacity
+    },
+    x: x-300, // Default value: center of the board
+    y: y, // Default value: center of the board
+    width: 150,
+    height: 75,
+  });
+
+
+  const description_end = await miro.board.createText({
+    content: '<p>The desired implementation outcome</p>',
+    style: {
+      color: '#000', // Default value: #1a1a1a (black)
+      fillColor: 'transparent', // Default value: transparent (no fill)
+      fillOpacity: 1, // Default value: 1 (solid color)
+      fontFamily: 'arial', // Default font type for the text
+      fontSize: 12, // Default font size
+      textAlign: 'center', // Default alignment: left
+    },
+    x: x,
+    y: y-100,
+    width: 200,
+  });
+
+  const text_end = await miro.board.createText({
+    content: '<b>Distal implementation outcome</b>',
+    style: {
+      color: '#000', // Default value: #1a1a1a (black)
+      fillColor: 'transparent', // Default value: transparent (no fill)
+      fillOpacity: 1, // Default value: 1 (solid color)
+      fontFamily: 'arial', // Default font type for the text
+      fontSize: 14, // Default font size
+      textAlign: 'center', // Default alignment: left
+    },
+    x: x,
+    y: y-70,
+    width: 200,
+  });
+
+  const shape_end = await miro.board.createShape({
+    content: out,
+    shape: 'circle',
+    style: {
+      color: '#000', // Default text color: '#1a1a1a' (black)
+      fillColor: 'transparent', // Default shape fill color: transparent (no fill)
+      fontFamily: 'arial', // Default font type for the text
+      fontSize: 14, // Default font size for the text, in dp
+      textAlign: 'center', // Default horizontal alignment for the text
+      textAlignVertical: 'middle', // Default vertical alignment for the text
+      borderStyle: 'normal', // Default border line style
+      borderOpacity: 1.0, // Default border color opacity: no opacity
+      borderColor: '#000', // Default border color: '#ffffff` (white)
+      borderWidth: 1, // Default border width
+      fillOpacity: 1.0, // Default fill color opacity: no opacity
+    },
+    x: x, // Default value: center of the board
+    y: y, // Default value: center of the board
+    width: 100,
+    height: 100,
+  });
+
+  const connector = await miro.board.createConnector({
+    shape: 'elbowed',
+    style: {
+      endStrokeCap: 'stealth',
+      strokeStyle: 'normal',
+      strokeColor: '#000', // Magenta
+      strokeWidth: 1,
+    },
+    start: {
+      item: shape_start.id,
+      position: {
+        x: 1.0,
+        y: 0.5,
+      },
+    },
+    end: {
+      item: shape_end.id,
+      position: {
+        x: 0.0,
+        y: 0.5,
+      },
+    },
+  });
+
+  await miro.board.viewport.zoomTo([description_start, text_start, shape_start, description_end, text_end, shape_end, connector]);
+  console.log(connector);
+}
+
 async function drop() {
   await miro.board.ui.on('drop', async ({x, y, target}) => {
     switch(target.id) {
@@ -389,6 +523,11 @@ async function drop() {
         break;
       case "6":
         proximal_outcome(x, y);
+        break;
+      case "7":
+        const strategy_val = document.getElementById("strategy").value;
+        const outcome_val = document.getElementById("outcome").value; 
+        flow(x+150, y, strategy_val, outcome_val);
         break;
       default:
         distal_outcome(x, y);
