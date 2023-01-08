@@ -1,11 +1,4 @@
-import React, { useEffect } from "react";
-import ReactDOM from "react-dom";
-
-import type { DropEvent } from "@mirohq/websdk-types";
-
-const { board } = miro;
-
-export function moderator(x, y) {
+function moderator(x, y) {
   const description = miro.board.createText({
     content: '<p>A factor that strengthens or weakens the relationship between the strategy and mechanism</p>',
     style: {
@@ -58,7 +51,7 @@ export function moderator(x, y) {
   });
 }
 
-export function strategy(x, y) {
+function strategy(x, y) {
   const description = miro.board.createText({
     content: '<p>A specific and operationally defined implementation strategy</p>',
     style: {
@@ -111,7 +104,7 @@ export function strategy(x, y) {
   });
 }
 
-export function mechanism(x, y) {
+function mechanism(x, y) {
   const description = miro.board.createText({
     content: '<p>How or why the strategy works to resolve the barrier</p>',
     style: {
@@ -164,7 +157,7 @@ export function mechanism(x, y) {
   });
 }
 
-export function precondition(x, y) {
+function precondition(x, y) {
   const description = miro.board.createText({
     content: '<p>A factor that is necessary for the mechanism to be activated and subsequent causal events to occur</p>',
     style: {
@@ -217,7 +210,7 @@ export function precondition(x, y) {
   });
 }
 
-export function barrier(x, y) {
+function barrier(x, y) {
   const description = miro.board.createText({
     content: '<p>The problem that a strategy is intended to resolve</p>',
     style: {
@@ -270,7 +263,7 @@ export function barrier(x, y) {
   });
 }
 
-export function proximal_outcome(x, y) {
+function proximal_outcome(x, y) {
   const description = miro.board.createText({
     content: '<p>The earliest signs of change in the mechanism, barrier, or precursors to the distal outcome</p>',
     style: {
@@ -323,7 +316,7 @@ export function proximal_outcome(x, y) {
   });
 }
 
-export function distal_outcome(x, y) {
+function distal_outcome(x, y) {
   const description = miro.board.createText({
     content: '<p>The desired implementation outcome</p>',
     style: {
@@ -375,3 +368,33 @@ export function distal_outcome(x, y) {
     height: 100,
   });
 }
+
+async function drop() {
+  await miro.board.ui.on('drop', async ({x, y, target}) => {
+    switch(target.id) {
+      case "1":
+        moderator(x, y);
+        break;
+      case "2":
+        strategy(x, y);
+        break;
+      case "3":
+        precondition(x, y);
+        break;
+      case "4":
+        mechanism(x, y);
+        break;
+      case "5":
+        barrier(x, y);
+        break;
+      case "6":
+        proximal_outcome(x, y);
+        break;
+      default:
+        distal_outcome(x, y);
+        break;
+    }
+  });
+}
+
+drop();
