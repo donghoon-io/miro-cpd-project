@@ -499,6 +499,72 @@ async function flow(x, y, str, out) {
     },
   });
 }
+  async function arrow(x, y) {
+    const shape_start = await miro.board.createShape({
+    shape: 'circle',
+    style: {
+      color: '#000', // Default text color: '#1a1a1a' (black)
+      fillColor: 'transparent', // Default shape fill color: transparent (no fill)
+      fontFamily: 'arial', // Default font type for the text
+      fontSize: 12, // Default font size for the text, in dp
+      textAlign: 'center', // Default horizontal alignment for the text
+      textAlignVertical: 'middle', // Default vertical alignment for the text
+      borderStyle: 'normal', // Default border line style
+      borderOpacity: 0.0, // Default border color opacity: no opacity
+      borderColor: '#000', // Default border color: '#ffffff` (white)
+      borderWidth: 1, // Default border width
+      fillOpacity: 0.0, // Default fill color opacity: no opacity
+    },
+    x: x-150, // Default value: center of the board
+    y: y, // Default value: center of the board
+    width: 8,
+    height: 8,
+  });
+
+  const shape_end = await miro.board.createShape({
+    shape: 'circle',
+    style: {
+      color: '#000', // Default text color: '#1a1a1a' (black)
+      fillColor: 'transparent', // Default shape fill color: transparent (no fill)
+      fontFamily: 'arial', // Default font type for the text
+      fontSize: 12, // Default font size for the text, in dp
+      textAlign: 'center', // Default horizontal alignment for the text
+      textAlignVertical: 'middle', // Default vertical alignment for the text
+      borderStyle: 'normal', // Default border line style
+      borderOpacity: 0.0, // Default border color opacity: no opacity
+      borderColor: '#000', // Default border color: '#ffffff` (white)
+      borderWidth: 1, // Default border width
+      fillOpacity: 0.0, // Default fill color opacity: no opacity
+    },
+    x: x+150, // Default value: center of the board
+    y: y, // Default value: center of the board
+    width: 8,
+    height: 8,
+  });
+  const connector = await miro.board.createConnector({
+    shape: 'elbowed',
+    style: {
+      endStrokeCap: 'stealth',
+      strokeStyle: 'normal',
+      strokeColor: '#000', // Magenta
+      strokeWidth: 1,
+    },
+    start: {
+      item: shape_start.id,
+      position: {
+        x: 1.0,
+        y: 0.5,
+      },
+    },
+    end: {
+      item: shape_end.id,
+      position: {
+        x: 0.0,
+        y: 0.5,
+      },
+    },
+  });
+}
 
 async function drop() {
   await miro.board.ui.on('drop', async ({x, y, target}) => {
@@ -521,13 +587,16 @@ async function drop() {
       case "6":
         proximal_outcome(x, y);
         break;
+      case "7":
+        distal_outcome(x, y);
+        break;
       case "8":
+        arrow(x, y);
+        break;
+      default:
         const strategy_val = document.getElementById("strategy").value;
         const outcome_val = document.getElementById("outcome").value; 
         flow(x+150, y, strategy_val, outcome_val);
-        break;
-      default:
-        distal_outcome(x, y);
         break;
     }
   });
