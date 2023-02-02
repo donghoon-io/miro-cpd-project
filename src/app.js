@@ -15,7 +15,7 @@ function moderator(x, y) {
   });
 
   const text = miro.board.createText({
-    content: '<b>Moderator</b>',
+    content: '<b><a href="https://docs.google.com/document/d/1GhgTo2pnpPTqXW9YbmSdKMT96rK6G7VpX8JmOq5Mod0/edit#bookmark=id.ug2co4bl0tku">Moderator</a></b>',
     style: {
       color: '#000', // Default value: #1a1a1a (black)
       fillColor: 'transparent', // Default value: transparent (no fill)
@@ -68,7 +68,7 @@ function strategy(x, y) {
   });
 
   const text = miro.board.createText({
-    content: '<b>Implementation strategy</b>',
+    content: '<b><a href="https://docs.google.com/document/d/1GhgTo2pnpPTqXW9YbmSdKMT96rK6G7VpX8JmOq5Mod0/edit#bookmark=id.od8pcqdtkhl2">Implementation strategy</a></b>',
     style: {
       color: '#000', // Default value: #1a1a1a (black)
       fillColor: 'transparent', // Default value: transparent (no fill)
@@ -121,7 +121,7 @@ function mechanism(x, y) {
   });
 
   const text = miro.board.createText({
-    content: '<b>Mechanism</b>',
+    content: '<b><a href="https://docs.google.com/document/d/1GhgTo2pnpPTqXW9YbmSdKMT96rK6G7VpX8JmOq5Mod0/edit#bookmark=id.vqklszz7pj1i">Mechanism</a></b>',
     style: {
       color: '#000', // Default value: #1a1a1a (black)
       fillColor: 'transparent', // Default value: transparent (no fill)
@@ -174,7 +174,7 @@ function precondition(x, y) {
   });
 
   const text = miro.board.createText({
-    content: '<b>Precondition for mechanism activation</b>',
+    content: '<b><a href="https://docs.google.com/document/d/1GhgTo2pnpPTqXW9YbmSdKMT96rK6G7VpX8JmOq5Mod0/edit#bookmark=id.ld4fb457u03l">Precondition</a></b>',
     style: {
       color: '#000', // Default value: #1a1a1a (black)
       fillColor: 'transparent', // Default value: transparent (no fill)
@@ -227,7 +227,7 @@ function barrier(x, y) {
   });
 
   const text = miro.board.createText({
-    content: '<b>Barrier</b>',
+    content: '<b><a href="https://docs.google.com/document/d/1GhgTo2pnpPTqXW9YbmSdKMT96rK6G7VpX8JmOq5Mod0/edit#bookmark=id.wf7exwrr03uh">Barrier</a></b>',
     style: {
       color: '#000', // Default value: #1a1a1a (black)
       fillColor: 'transparent', // Default value: transparent (no fill)
@@ -280,7 +280,7 @@ function proximal_outcome(x, y) {
   });
 
   const text = miro.board.createText({
-    content: '<b>Proximal outcome</b>',
+    content: '<b><a href="https://docs.google.com/document/d/1GhgTo2pnpPTqXW9YbmSdKMT96rK6G7VpX8JmOq5Mod0/edit#bookmark=id.zbc933au5vfi">Proximal outcome</a></b>',
     style: {
       color: '#000', // Default value: #1a1a1a (black)
       fillColor: 'transparent', // Default value: transparent (no fill)
@@ -333,7 +333,7 @@ function distal_outcome(x, y) {
   });
 
   const text = miro.board.createText({
-    content: '<b>Distal implementation outcome</b>',
+    content: '<b><a href="https://docs.google.com/document/d/1GhgTo2pnpPTqXW9YbmSdKMT96rK6G7VpX8JmOq5Mod0/edit#bookmark=id.o3ahs47uleu4">Distal implementation outcome</a></b>',
     style: {
       color: '#000', // Default value: #1a1a1a (black)
       fillColor: 'transparent', // Default value: transparent (no fill)
@@ -386,7 +386,7 @@ async function flow(x, y, str, out) {
   });
 
   const text_start = await miro.board.createText({
-    content: '<b>Implementation strategy</b>',
+    content: '<b><a href="https://docs.google.com/document/d/1GhgTo2pnpPTqXW9YbmSdKMT96rK6G7VpX8JmOq5Mod0/edit#bookmark=id.od8pcqdtkhl2">Implementation strategy</a></b>',
     style: {
       color: '#000', // Default value: #1a1a1a (black)
       fillColor: 'transparent', // Default value: transparent (no fill)
@@ -407,7 +407,7 @@ async function flow(x, y, str, out) {
       color: '#000', // Default text color: '#1a1a1a' (black)
       fillColor: 'transparent', // Default shape fill color: transparent (no fill)
       fontFamily: 'arial', // Default font type for the text
-      fontSize: 14, // Default font size for the text, in dp
+      fontSize: 12, // Default font size for the text, in dp
       textAlign: 'center', // Default horizontal alignment for the text
       textAlignVertical: 'middle', // Default vertical alignment for the text
       borderStyle: 'normal', // Default border line style
@@ -439,7 +439,7 @@ async function flow(x, y, str, out) {
   });
 
   const text_end = await miro.board.createText({
-    content: '<b>Distal implementation outcome</b>',
+    content: '<b><a href="https://docs.google.com/document/d/1GhgTo2pnpPTqXW9YbmSdKMT96rK6G7VpX8JmOq5Mod0/edit#bookmark=id.o3ahs47uleu4">Distal implementation outcome</a></b>',
     style: {
       color: '#000', // Default value: #1a1a1a (black)
       fillColor: 'transparent', // Default value: transparent (no fill)
@@ -460,7 +460,7 @@ async function flow(x, y, str, out) {
       color: '#000', // Default text color: '#1a1a1a' (black)
       fillColor: 'transparent', // Default shape fill color: transparent (no fill)
       fontFamily: 'arial', // Default font type for the text
-      fontSize: 14, // Default font size for the text, in dp
+      fontSize: 12, // Default font size for the text, in dp
       textAlign: 'center', // Default horizontal alignment for the text
       textAlignVertical: 'middle', // Default vertical alignment for the text
       borderStyle: 'normal', // Default border line style
