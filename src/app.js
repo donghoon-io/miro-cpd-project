@@ -1,20 +1,6 @@
-function moderator(x, y) {
-  const description = miro.board.createText({
-    content: '<p>A factor that strengthens or weakens the relationship between the strategy and mechanism</p>',
-    style: {
-      color: '#000', // Default value: #1a1a1a (black)
-      fillColor: 'transparent', // Default value: transparent (no fill)
-      fillOpacity: 1, // Default value: 1 (solid color)
-      fontFamily: 'arial', // Default font type for the text
-      fontSize: 12, // Default font size
-      textAlign: 'center', // Default alignment: left
-    },
-    x: x,
-    y: y-85,
-    width: 200,
-  });
+async function moderator(x, y) {
 
-  const text = miro.board.createText({
+  const text = await miro.board.createText({
     content: '<b><a href="https://docs.google.com/document/d/1GhgTo2pnpPTqXW9YbmSdKMT96rK6G7VpX8JmOq5Mod0/edit#bookmark=id.ug2co4bl0tku">Moderator</a></b>',
     style: {
       color: '#000', // Default value: #1a1a1a (black)
@@ -29,13 +15,14 @@ function moderator(x, y) {
     width: 200,
   });
 
-  const shape = miro.board.createShape({
+  const shape = await miro.board.createShape({
     shape: 'rectangle',
+    content: "A factor that strengthens or weakens the relationship between the strategy and mechanism",
     style: {
       color: '#000', // Default text color: '#1a1a1a' (black)
       fillColor: 'transparent', // Default shape fill color: transparent (no fill)
       fontFamily: 'arial', // Default font type for the text
-      fontSize: 14, // Default font size for the text, in dp
+      fontSize: 12, // Default font size for the text, in dp
       textAlign: 'center', // Default horizontal alignment for the text
       textAlignVertical: 'middle', // Default vertical alignment for the text
       borderStyle: 'normal', // Default border line style
@@ -49,25 +36,55 @@ function moderator(x, y) {
     width: 150,
     height: 75,
   });
-}
 
-function strategy(x, y) {
-  const description = miro.board.createText({
-    content: '<p>A specific and operationally defined implementation strategy</p>',
+  const shape_end = await miro.board.createShape({
+    shape: 'circle',
     style: {
-      color: '#000', // Default value: #1a1a1a (black)
-      fillColor: 'transparent', // Default value: transparent (no fill)
-      fillOpacity: 1, // Default value: 1 (solid color)
+      color: '#000', // Default text color: '#1a1a1a' (black)
+      fillColor: 'transparent', // Default shape fill color: transparent (no fill)
       fontFamily: 'arial', // Default font type for the text
-      fontSize: 12, // Default font size
-      textAlign: 'center', // Default alignment: left
+      fontSize: 12, // Default font size for the text, in dp
+      textAlign: 'center', // Default horizontal alignment for the text
+      textAlignVertical: 'middle', // Default vertical alignment for the text
+      borderStyle: 'normal', // Default border line style
+      borderOpacity: 1.0, // Default border color opacity: no opacity
+      borderColor: 'transparent', // Default border color: '#ffffff` (white)
+      borderWidth: 1, // Default border width
+      fillOpacity: 1.0, // Default fill color opacity: no opacity
     },
-    x: x,
-    y: y-85,
-    width: 200,
+    x: x+200, // Default value: center of the board
+    y: y, // Default value: center of the board
+    width: 10,
+    height: 10,
   });
 
-  const text = miro.board.createText({
+  const connector = await miro.board.createConnector({
+    shape: 'elbowed',
+    style: {
+      endStrokeCap: 'stealth',
+      strokeStyle: 'normal',
+      strokeColor: '#000', // Magenta
+      strokeWidth: 1,
+    },
+    start: {
+      item: shape.id,
+      position: {
+        x: 1.0,
+        y: 0.5,
+      },
+    },
+    end: {
+      item: shape_end.id,
+      position: {
+        x: 0.0,
+        y: 0.5,
+      },
+    },
+  });
+}
+
+async function strategy(x, y) {
+  const text = await miro.board.createText({
     content: '<b><a href="https://docs.google.com/document/d/1GhgTo2pnpPTqXW9YbmSdKMT96rK6G7VpX8JmOq5Mod0/edit#bookmark=id.od8pcqdtkhl2">Implementation strategy</a></b>',
     style: {
       color: '#000', // Default value: #1a1a1a (black)
@@ -82,13 +99,14 @@ function strategy(x, y) {
     width: 200,
   });
 
-  const shape = miro.board.createShape({
+  const shape = await miro.board.createShape({
     shape: 'round_rectangle',
+    content: "A specific and operationally defined implementation strategy",
     style: {
       color: '#000', // Default text color: '#1a1a1a' (black)
       fillColor: 'transparent', // Default shape fill color: transparent (no fill)
       fontFamily: 'arial', // Default font type for the text
-      fontSize: 14, // Default font size for the text, in dp
+      fontSize: 12, // Default font size for the text, in dp
       textAlign: 'center', // Default horizontal alignment for the text
       textAlignVertical: 'middle', // Default vertical alignment for the text
       borderStyle: 'normal', // Default border line style
@@ -102,25 +120,55 @@ function strategy(x, y) {
     width: 150,
     height: 75,
   });
-}
 
-function mechanism(x, y) {
-  const description = miro.board.createText({
-    content: '<p>How or why the strategy works to resolve the barrier</p>',
+  const shape_end = await miro.board.createShape({
+    shape: 'circle',
     style: {
-      color: '#000', // Default value: #1a1a1a (black)
-      fillColor: 'transparent', // Default value: transparent (no fill)
-      fillOpacity: 1, // Default value: 1 (solid color)
+      color: '#000', // Default text color: '#1a1a1a' (black)
+      fillColor: 'transparent', // Default shape fill color: transparent (no fill)
       fontFamily: 'arial', // Default font type for the text
-      fontSize: 12, // Default font size
-      textAlign: 'center', // Default alignment: left
+      fontSize: 12, // Default font size for the text, in dp
+      textAlign: 'center', // Default horizontal alignment for the text
+      textAlignVertical: 'middle', // Default vertical alignment for the text
+      borderStyle: 'normal', // Default border line style
+      borderOpacity: 1.0, // Default border color opacity: no opacity
+      borderColor: 'transparent', // Default border color: '#ffffff` (white)
+      borderWidth: 1, // Default border width
+      fillOpacity: 1.0, // Default fill color opacity: no opacity
     },
-    x: x,
-    y: y-90,
-    width: 200,
+    x: x+200, // Default value: center of the board
+    y: y, // Default value: center of the board
+    width: 10,
+    height: 10,
   });
 
-  const text = miro.board.createText({
+  const connector = await miro.board.createConnector({
+    shape: 'elbowed',
+    style: {
+      endStrokeCap: 'stealth',
+      strokeStyle: 'normal',
+      strokeColor: '#000', // Magenta
+      strokeWidth: 1,
+    },
+    start: {
+      item: shape.id,
+      position: {
+        x: 1.0,
+        y: 0.5,
+      },
+    },
+    end: {
+      item: shape_end.id,
+      position: {
+        x: 0.0,
+        y: 0.5,
+      },
+    },
+  });
+}
+
+async function mechanism(x, y) {
+  const text = await miro.board.createText({
     content: '<b><a href="https://docs.google.com/document/d/1GhgTo2pnpPTqXW9YbmSdKMT96rK6G7VpX8JmOq5Mod0/edit#bookmark=id.vqklszz7pj1i">Mechanism</a></b>',
     style: {
       color: '#000', // Default value: #1a1a1a (black)
@@ -135,13 +183,14 @@ function mechanism(x, y) {
     width: 200,
   });
 
-  const shape = miro.board.createShape({
+  const shape = await miro.board.createShape({
     shape: 'rhombus',
+    content: "How or why the strategy works to resolve the barrier",
     style: {
       color: '#000', // Default text color: '#1a1a1a' (black)
       fillColor: 'transparent', // Default shape fill color: transparent (no fill)
       fontFamily: 'arial', // Default font type for the text
-      fontSize: 14, // Default font size for the text, in dp
+      fontSize: 8, // Default font size for the text, in dp
       textAlign: 'center', // Default horizontal alignment for the text
       textAlignVertical: 'middle', // Default vertical alignment for the text
       borderStyle: 'normal', // Default border line style
@@ -155,25 +204,55 @@ function mechanism(x, y) {
     width: 100,
     height: 100,
   });
-}
 
-function precondition(x, y) {
-  const description = miro.board.createText({
-    content: '<p>A factor that is necessary for the mechanism to be activated and subsequent causal events to occur</p>',
+  const shape_end = await miro.board.createShape({
+    shape: 'circle',
     style: {
-      color: '#000', // Default value: #1a1a1a (black)
-      fillColor: 'transparent', // Default value: transparent (no fill)
-      fillOpacity: 1, // Default value: 1 (solid color)
+      color: '#000', // Default text color: '#1a1a1a' (black)
+      fillColor: 'transparent', // Default shape fill color: transparent (no fill)
       fontFamily: 'arial', // Default font type for the text
-      fontSize: 12, // Default font size
-      textAlign: 'center', // Default alignment: left
+      fontSize: 12, // Default font size for the text, in dp
+      textAlign: 'center', // Default horizontal alignment for the text
+      textAlignVertical: 'middle', // Default vertical alignment for the text
+      borderStyle: 'normal', // Default border line style
+      borderOpacity: 1.0, // Default border color opacity: no opacity
+      borderColor: 'transparent', // Default border color: '#ffffff` (white)
+      borderWidth: 1, // Default border width
+      fillOpacity: 1.0, // Default fill color opacity: no opacity
     },
-    x: x,
-    y: y-100,
-    width: 200,
+    x: x+200, // Default value: center of the board
+    y: y, // Default value: center of the board
+    width: 10,
+    height: 10,
   });
 
-  const text = miro.board.createText({
+  const connector = await miro.board.createConnector({
+    shape: 'elbowed',
+    style: {
+      endStrokeCap: 'stealth',
+      strokeStyle: 'normal',
+      strokeColor: '#000', // Magenta
+      strokeWidth: 1,
+    },
+    start: {
+      item: shape.id,
+      position: {
+        x: 1.0,
+        y: 0.5,
+      },
+    },
+    end: {
+      item: shape_end.id,
+      position: {
+        x: 0.0,
+        y: 0.5,
+      },
+    },
+  });
+}
+
+async function precondition(x, y) {
+  const text = await miro.board.createText({
     content: '<b><a href="https://docs.google.com/document/d/1GhgTo2pnpPTqXW9YbmSdKMT96rK6G7VpX8JmOq5Mod0/edit#bookmark=id.ld4fb457u03l">Precondition</a></b>',
     style: {
       color: '#000', // Default value: #1a1a1a (black)
@@ -188,13 +267,14 @@ function precondition(x, y) {
     width: 200,
   });
 
-  const shape = miro.board.createShape({
+  const shape = await miro.board.createShape({
     shape: 'trapezoid',
+    content: "A factor that is necessary for the mechanism to be activated and subsequent causal events to occur",
     style: {
       color: '#000', // Default text color: '#1a1a1a' (black)
       fillColor: 'transparent', // Default shape fill color: transparent (no fill)
       fontFamily: 'arial', // Default font type for the text
-      fontSize: 14, // Default font size for the text, in dp
+      fontSize: 12, // Default font size for the text, in dp
       textAlign: 'center', // Default horizontal alignment for the text
       textAlignVertical: 'middle', // Default vertical alignment for the text
       borderStyle: 'normal', // Default border line style
@@ -208,25 +288,55 @@ function precondition(x, y) {
     width: 150,
     height: 75,
   });
-}
 
-function barrier(x, y) {
-  const description = miro.board.createText({
-    content: '<p>The problem that a strategy is intended to resolve</p>',
+  const shape_end = await miro.board.createShape({
+    shape: 'circle',
     style: {
-      color: '#000', // Default value: #1a1a1a (black)
-      fillColor: 'transparent', // Default value: transparent (no fill)
-      fillOpacity: 1, // Default value: 1 (solid color)
+      color: '#000', // Default text color: '#1a1a1a' (black)
+      fillColor: 'transparent', // Default shape fill color: transparent (no fill)
       fontFamily: 'arial', // Default font type for the text
-      fontSize: 12, // Default font size
-      textAlign: 'center', // Default alignment: left
+      fontSize: 12, // Default font size for the text, in dp
+      textAlign: 'center', // Default horizontal alignment for the text
+      textAlignVertical: 'middle', // Default vertical alignment for the text
+      borderStyle: 'normal', // Default border line style
+      borderOpacity: 1.0, // Default border color opacity: no opacity
+      borderColor: 'transparent', // Default border color: '#ffffff` (white)
+      borderWidth: 1, // Default border width
+      fillOpacity: 1.0, // Default fill color opacity: no opacity
     },
-    x: x,
-    y: y-90,
-    width: 200,
+    x: x+200, // Default value: center of the board
+    y: y+3, // Default value: center of the board
+    width: 10,
+    height: 10,
   });
 
-  const text = miro.board.createText({
+  const connector = await miro.board.createConnector({
+    shape: 'elbowed',
+    style: {
+      endStrokeCap: 'stealth',
+      strokeStyle: 'normal',
+      strokeColor: '#000', // Magenta
+      strokeWidth: 1,
+    },
+    start: {
+      item: shape.id,
+      position: {
+        x: 1.0,
+        y: 0.5,
+      },
+    },
+    end: {
+      item: shape_end.id,
+      position: {
+        x: 0.0,
+        y: 0.5,
+      },
+    },
+  });
+}
+
+async function barrier(x, y) {
+  const text = await miro.board.createText({
     content: '<b><a href="https://docs.google.com/document/d/1GhgTo2pnpPTqXW9YbmSdKMT96rK6G7VpX8JmOq5Mod0/edit#bookmark=id.wf7exwrr03uh">Barrier</a></b>',
     style: {
       color: '#000', // Default value: #1a1a1a (black)
@@ -241,13 +351,14 @@ function barrier(x, y) {
     width: 200,
   });
 
-  const shape = miro.board.createShape({
+  const shape = await miro.board.createShape({
     shape: 'pentagon',
+    content: "The problem that a strategy is intended to resolve",
     style: {
       color: '#000', // Default text color: '#1a1a1a' (black)
       fillColor: 'transparent', // Default shape fill color: transparent (no fill)
       fontFamily: 'arial', // Default font type for the text
-      fontSize: 14, // Default font size for the text, in dp
+      fontSize: 10, // Default font size for the text, in dp
       textAlign: 'center', // Default horizontal alignment for the text
       textAlignVertical: 'middle', // Default vertical alignment for the text
       borderStyle: 'normal', // Default border line style
@@ -261,25 +372,56 @@ function barrier(x, y) {
     width: 100,
     height: 100,
   });
-}
 
-function proximal_outcome(x, y) {
-  const description = miro.board.createText({
-    content: '<p>The earliest signs of change in the mechanism, barrier, or precursors to the distal outcome</p>',
+  const shape_end = await miro.board.createShape({
+    shape: 'circle',
     style: {
-      color: '#000', // Default value: #1a1a1a (black)
-      fillColor: 'transparent', // Default value: transparent (no fill)
-      fillOpacity: 1, // Default value: 1 (solid color)
+      color: '#000', // Default text color: '#1a1a1a' (black)
+      fillColor: 'transparent', // Default shape fill color: transparent (no fill)
       fontFamily: 'arial', // Default font type for the text
-      fontSize: 12, // Default font size
-      textAlign: 'center', // Default alignment: left
+      fontSize: 12, // Default font size for the text, in dp
+      textAlign: 'center', // Default horizontal alignment for the text
+      textAlignVertical: 'middle', // Default vertical alignment for the text
+      borderStyle: 'normal', // Default border line style
+      borderOpacity: 1.0, // Default border color opacity: no opacity
+      borderColor: 'transparent', // Default border color: '#ffffff` (white)
+      borderWidth: 1, // Default border width
+      fillOpacity: 1.0, // Default fill color opacity: no opacity
     },
-    x: x,
-    y: y-100,
-    width: 200,
+    x: x+200, // Default value: center of the board
+    y: y-1, // Default value: center of the board
+    width: 10,
+    height: 10,
   });
 
-  const text = miro.board.createText({
+  const connector = await miro.board.createConnector({
+    shape: 'elbowed',
+    style: {
+      endStrokeCap: 'stealth',
+      strokeStyle: 'normal',
+      strokeColor: '#000', // Magenta
+      strokeWidth: 1,
+    },
+    start: {
+      item: shape.id,
+      position: {
+        x: 1.0,
+        y: 0.5,
+      },
+    },
+    end: {
+      item: shape_end.id,
+      position: {
+        x: 0.0,
+        y: 0.5,
+      },
+    },
+  });
+}
+
+async function proximal_outcome(x, y) {
+
+  const text = await miro.board.createText({
     content: '<b><a href="https://docs.google.com/document/d/1GhgTo2pnpPTqXW9YbmSdKMT96rK6G7VpX8JmOq5Mod0/edit#bookmark=id.zbc933au5vfi">Proximal outcome</a></b>',
     style: {
       color: '#000', // Default value: #1a1a1a (black)
@@ -290,17 +432,18 @@ function proximal_outcome(x, y) {
       textAlign: 'center', // Default alignment: left
     },
     x: x,
-    y: y-65,
+    y: y-75,
     width: 200,
   });
 
-  const shape = miro.board.createShape({
+  const shape = await miro.board.createShape({
     shape: 'circle',
+    content: "The earliest signs of change in the mechanism, barrier, or precursors to the distal outcome",
     style: {
       color: '#000', // Default text color: '#1a1a1a' (black)
       fillColor: 'transparent', // Default shape fill color: transparent (no fill)
       fontFamily: 'arial', // Default font type for the text
-      fontSize: 14, // Default font size for the text, in dp
+      fontSize: 10, // Default font size for the text, in dp
       textAlign: 'center', // Default horizontal alignment for the text
       textAlignVertical: 'middle', // Default vertical alignment for the text
       borderStyle: 'normal', // Default border line style
@@ -311,28 +454,58 @@ function proximal_outcome(x, y) {
     },
     x: x, // Default value: center of the board
     y: y, // Default value: center of the board
-    width: 100,
-    height: 100,
+    width: 120,
+    height: 120,
+  });
+
+  const shape_end = await miro.board.createShape({
+    shape: 'circle',
+    style: {
+      color: '#000', // Default text color: '#1a1a1a' (black)
+      fillColor: 'transparent', // Default shape fill color: transparent (no fill)
+      fontFamily: 'arial', // Default font type for the text
+      fontSize: 12, // Default font size for the text, in dp
+      textAlign: 'center', // Default horizontal alignment for the text
+      textAlignVertical: 'middle', // Default vertical alignment for the text
+      borderStyle: 'normal', // Default border line style
+      borderOpacity: 1.0, // Default border color opacity: no opacity
+      borderColor: 'transparent', // Default border color: '#ffffff` (white)
+      borderWidth: 1, // Default border width
+      fillOpacity: 1.0, // Default fill color opacity: no opacity
+    },
+    x: x+200, // Default value: center of the board
+    y: y, // Default value: center of the board
+    width: 10,
+    height: 10,
+  });
+
+  const connector = await miro.board.createConnector({
+    shape: 'elbowed',
+    style: {
+      endStrokeCap: 'stealth',
+      strokeStyle: 'normal',
+      strokeColor: '#000', // Magenta
+      strokeWidth: 1,
+    },
+    start: {
+      item: shape.id,
+      position: {
+        x: 1.0,
+        y: 0.5,
+      },
+    },
+    end: {
+      item: shape_end.id,
+      position: {
+        x: 0.0,
+        y: 0.5,
+      },
+    },
   });
 }
 
-function distal_outcome(x, y) {
-  const description = miro.board.createText({
-    content: '<p>The desired implementation outcome</p>',
-    style: {
-      color: '#000', // Default value: #1a1a1a (black)
-      fillColor: 'transparent', // Default value: transparent (no fill)
-      fillOpacity: 1, // Default value: 1 (solid color)
-      fontFamily: 'arial', // Default font type for the text
-      fontSize: 12, // Default font size
-      textAlign: 'center', // Default alignment: left
-    },
-    x: x,
-    y: y-100,
-    width: 200,
-  });
-
-  const text = miro.board.createText({
+async function distal_outcome(x, y) {
+  const text = await miro.board.createText({
     content: '<b><a href="https://docs.google.com/document/d/1GhgTo2pnpPTqXW9YbmSdKMT96rK6G7VpX8JmOq5Mod0/edit#bookmark=id.o3ahs47uleu4">Distal implementation outcome</a></b>',
     style: {
       color: '#000', // Default value: #1a1a1a (black)
@@ -343,17 +516,18 @@ function distal_outcome(x, y) {
       textAlign: 'center', // Default alignment: left
     },
     x: x,
-    y: y-70,
+    y: y-80,
     width: 200,
   });
 
-  const shape = miro.board.createShape({
+  const shape = await miro.board.createShape({
     shape: 'circle',
+    content: "The desired implementation outcome",
     style: {
       color: '#000', // Default text color: '#1a1a1a' (black)
       fillColor: 'transparent', // Default shape fill color: transparent (no fill)
       fontFamily: 'arial', // Default font type for the text
-      fontSize: 14, // Default font size for the text, in dp
+      fontSize: 12, // Default font size for the text, in dp
       textAlign: 'center', // Default horizontal alignment for the text
       textAlignVertical: 'middle', // Default vertical alignment for the text
       borderStyle: 'normal', // Default border line style
@@ -364,8 +538,8 @@ function distal_outcome(x, y) {
     },
     x: x, // Default value: center of the board
     y: y, // Default value: center of the board
-    width: 100,
-    height: 100,
+    width: 120,
+    height: 120,
   });
 }
 
@@ -589,9 +763,6 @@ async function drop() {
         break;
       case "7":
         distal_outcome(x, y);
-        break;
-      case "8":
-        arrow(x, y);
         break;
       default:
         const strategy_val = document.getElementById("strategy").value;
