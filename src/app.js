@@ -22,12 +22,11 @@ async function moderator(x, y) {
 
   const shape = await miro.board.createShape({
     shape: 'rectangle',
-    content: "A factor that strengthens or weakens the relationship between the strategy and mechanism",
     style: {
       color: '#000', // Default text color: '#1a1a1a' (black)
       fillColor: 'transparent', // Default shape fill color: transparent (no fill)
       fontFamily: 'arial', // Default font type for the text
-      fontSize: 12, // Default font size for the text, in dp
+      fontSize: 14, // Default font size for the text, in dp
       textAlign: 'center', // Default horizontal alignment for the text
       textAlignVertical: 'middle', // Default vertical alignment for the text
       borderStyle: 'normal', // Default border line style
@@ -66,10 +65,10 @@ async function moderator(x, y) {
   const connector = await miro.board.createConnector({
     shape: 'elbowed',
     style: {
-      endStrokeCap: 'stealth',
+      endStrokeCap: 'rounded_stealth',
       strokeStyle: 'normal',
       strokeColor: '#000', // Magenta
-      strokeWidth: 1,
+      strokeWidth: 2,
     },
     start: {
       item: shape.id,
@@ -106,12 +105,11 @@ async function strategy(x, y) {
 
   const shape = await miro.board.createShape({
     shape: 'round_rectangle',
-    content: "A specific and operationally defined implementation strategy",
     style: {
       color: '#000', // Default text color: '#1a1a1a' (black)
       fillColor: 'transparent', // Default shape fill color: transparent (no fill)
       fontFamily: 'arial', // Default font type for the text
-      fontSize: 12, // Default font size for the text, in dp
+      fontSize: 14, // Default font size for the text, in dp
       textAlign: 'center', // Default horizontal alignment for the text
       textAlignVertical: 'middle', // Default vertical alignment for the text
       borderStyle: 'normal', // Default border line style
@@ -150,10 +148,10 @@ async function strategy(x, y) {
   const connector = await miro.board.createConnector({
     shape: 'elbowed',
     style: {
-      endStrokeCap: 'stealth',
+      endStrokeCap: 'rounded_stealth',
       strokeStyle: 'normal',
       strokeColor: '#000', // Magenta
-      strokeWidth: 1,
+      strokeWidth: 2,
     },
     start: {
       item: shape.id,
@@ -190,12 +188,11 @@ async function mechanism(x, y) {
 
   const shape = await miro.board.createShape({
     shape: 'rhombus',
-    content: "How or why the strategy works to resolve the barrier",
     style: {
       color: '#000', // Default text color: '#1a1a1a' (black)
       fillColor: 'transparent', // Default shape fill color: transparent (no fill)
       fontFamily: 'arial', // Default font type for the text
-      fontSize: 8, // Default font size for the text, in dp
+      fontSize: 14, // Default font size for the text, in dp
       textAlign: 'center', // Default horizontal alignment for the text
       textAlignVertical: 'middle', // Default vertical alignment for the text
       borderStyle: 'normal', // Default border line style
@@ -234,10 +231,10 @@ async function mechanism(x, y) {
   const connector = await miro.board.createConnector({
     shape: 'elbowed',
     style: {
-      endStrokeCap: 'stealth',
+      endStrokeCap: 'rounded_stealth',
       strokeStyle: 'normal',
       strokeColor: '#000', // Magenta
-      strokeWidth: 1,
+      strokeWidth: 2,
     },
     start: {
       item: shape.id,
@@ -274,12 +271,11 @@ async function precondition(x, y) {
 
   const shape = await miro.board.createShape({
     shape: 'trapezoid',
-    content: "A factor that is necessary for the mechanism to be activated and subsequent causal events to occur",
     style: {
       color: '#000', // Default text color: '#1a1a1a' (black)
       fillColor: 'transparent', // Default shape fill color: transparent (no fill)
       fontFamily: 'arial', // Default font type for the text
-      fontSize: 12, // Default font size for the text, in dp
+      fontSize: 14, // Default font size for the text, in dp
       textAlign: 'center', // Default horizontal alignment for the text
       textAlignVertical: 'middle', // Default vertical alignment for the text
       borderStyle: 'normal', // Default border line style
@@ -318,10 +314,10 @@ async function precondition(x, y) {
   const connector = await miro.board.createConnector({
     shape: 'elbowed',
     style: {
-      endStrokeCap: 'stealth',
+      endStrokeCap: 'rounded_stealth',
       strokeStyle: 'normal',
       strokeColor: '#000', // Magenta
-      strokeWidth: 1,
+      strokeWidth: 2,
     },
     start: {
       item: shape.id,
@@ -358,12 +354,11 @@ async function barrier(x, y) {
 
   const shape = await miro.board.createShape({
     shape: 'pentagon',
-    content: "The problem that a strategy is intended to resolve",
     style: {
       color: '#000', // Default text color: '#1a1a1a' (black)
       fillColor: 'transparent', // Default shape fill color: transparent (no fill)
       fontFamily: 'arial', // Default font type for the text
-      fontSize: 10, // Default font size for the text, in dp
+      fontSize: 14, // Default font size for the text, in dp
       textAlign: 'center', // Default horizontal alignment for the text
       textAlignVertical: 'middle', // Default vertical alignment for the text
       borderStyle: 'normal', // Default border line style
@@ -402,10 +397,10 @@ async function barrier(x, y) {
   const connector = await miro.board.createConnector({
     shape: 'elbowed',
     style: {
-      endStrokeCap: 'stealth',
+      endStrokeCap: 'rounded_stealth',
       strokeStyle: 'normal',
       strokeColor: '#000', // Magenta
-      strokeWidth: 1,
+      strokeWidth: 2,
     },
     start: {
       item: shape.id,
@@ -443,12 +438,11 @@ async function proximal_outcome(x, y) {
 
   const shape = await miro.board.createShape({
     shape: 'circle',
-    content: "The earliest signs of change in the mechanism, barrier, or precursors to the distal outcome",
     style: {
       color: '#000', // Default text color: '#1a1a1a' (black)
       fillColor: 'transparent', // Default shape fill color: transparent (no fill)
       fontFamily: 'arial', // Default font type for the text
-      fontSize: 10, // Default font size for the text, in dp
+      fontSize: 14, // Default font size for the text, in dp
       textAlign: 'center', // Default horizontal alignment for the text
       textAlignVertical: 'middle', // Default vertical alignment for the text
       borderStyle: 'normal', // Default border line style
@@ -487,10 +481,10 @@ async function proximal_outcome(x, y) {
   const connector = await miro.board.createConnector({
     shape: 'elbowed',
     style: {
-      endStrokeCap: 'stealth',
+      endStrokeCap: 'rounded_stealth',
       strokeStyle: 'normal',
       strokeColor: '#000', // Magenta
-      strokeWidth: 1,
+      strokeWidth: 2,
     },
     start: {
       item: shape.id,
@@ -527,12 +521,11 @@ async function distal_outcome(x, y) {
 
   const shape = await miro.board.createShape({
     shape: 'circle',
-    content: "The desired implementation outcome",
     style: {
       color: '#000', // Default text color: '#1a1a1a' (black)
       fillColor: 'transparent', // Default shape fill color: transparent (no fill)
       fontFamily: 'arial', // Default font type for the text
-      fontSize: 12, // Default font size for the text, in dp
+      fontSize: 14, // Default font size for the text, in dp
       textAlign: 'center', // Default horizontal alignment for the text
       textAlignVertical: 'middle', // Default vertical alignment for the text
       borderStyle: 'normal', // Default border line style
@@ -657,10 +650,10 @@ async function flow(x, y, str, out) {
   const connector = await miro.board.createConnector({
     shape: 'elbowed',
     style: {
-      endStrokeCap: 'stealth',
+      endStrokeCap: 'rounded_stealth',
       strokeStyle: 'normal',
       strokeColor: '#000', // Magenta
-      strokeWidth: 1,
+      strokeWidth: 2,
     },
     start: {
       item: shape_start.id,
@@ -723,10 +716,10 @@ async function flow(x, y, str, out) {
   const connector = await miro.board.createConnector({
     shape: 'elbowed',
     style: {
-      endStrokeCap: 'stealth',
+      endStrokeCap: 'rounded_stealth',
       strokeStyle: 'normal',
       strokeColor: '#000', // Magenta
-      strokeWidth: 1,
+      strokeWidth: 2,
     },
     start: {
       item: shape_start.id,
