@@ -25,7 +25,7 @@ async function moderator(x, y) {
     width: 150,
     height: 75,
   });
-
+  /*
   const shape_end = await miro.board.createShape({
     shape: 'circle',
     style: {
@@ -70,6 +70,7 @@ async function moderator(x, y) {
       },
     },
   });
+  */
 }
 
 async function strategy(x, y) {
@@ -232,7 +233,7 @@ async function precondition(x, y) {
     width: 150,
     height: 75,
   });
-
+/*
   const shape_end = await miro.board.createShape({
     shape: 'circle',
     style: {
@@ -277,6 +278,7 @@ async function precondition(x, y) {
       },
     },
   });
+  */
 }
 
 async function barrier(x, y) {
