@@ -8,6 +8,7 @@ dist-ssr
 
 # misc
 .DS_Store
+**/.DS_Store
 
 # local env files
 .env
